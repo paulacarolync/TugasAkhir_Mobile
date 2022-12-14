@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.InsertTask.InsertTaskFragment">
+
+    <FrameLayout
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="@color/blue"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/ic_back"
+            android:layout_gravity="start|center"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            tools:ignore="ContentDescription" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:text="@string/update_task_header"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:paddingTop="10dp"/>
+        <ImageView
+            android:id="@+id/menu_delete"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_delete"
+            android:layout_gravity="end|center"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            tools:ignore="ContentDescription" />
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/TitleHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Header1"
+                android:layout_marginTop="50dp"
+                style="@style/TextAppearance.AppCompat.Headline" />
+            <EditText
+                android:id="@+id/updateTextTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/field_background"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="@string/title_field"
+                android:padding="15dp"
+                android:layout_marginTop="5dp"
+                android:minHeight="48dp"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/CategoryHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Header2"
+                android:layout_marginTop="10dp"
+                style="@style/TextAppearance.AppCompat.Headline" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/updateTextCategory"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <AutoCompleteTextView
+                    android:id="@+id/updateCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/field_background"
+                    android:layout_weight="1"
+                    android:inputType="none"
+                    tools:text="@string/choose_task_category"
+                    android:textColor="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/DescriptionHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Header3"
+                android:layout_marginTop="10dp"
+                style="@style/TextAppearance.AppCompat.Headline" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updateTextDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="top|start"
+                android:ems="10"
+                android:background="@drawable/field_background"
+                android:inputType="textMultiLine"
+                android:minHeight="100dp"
+                android:padding="10dp"
+                android:hint="@string/description_field"
+                android:autofillHints="" />
+
+            <Button
+                android:id="@+id/update_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/update_task"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

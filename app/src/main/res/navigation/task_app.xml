@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/task_app"
+    app:startDestination="@id/tasksListFragment">
+
+    <fragment
+        android:id="@+id/tasksListFragment"
+        android:name="com.D121201054.task.Fragments.TasksList.TasksListFragment"
+        android:label="Task Management"
+        tools:layout="@layout/fragment_tasks_list" >
+        <action
+            android:id="@+id/action_tasksListFragment_to_insertTaskFragment"
+            app:destination="@id/insertTaskFragment" />
+        <action
+            android:id="@+id/action_tasksListFragment_to_updateTaskFragment"
+            app:destination="@id/updateTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/insertTaskFragment"
+        android:name="com.D121201054.task.Fragments.InsertTask.InsertTaskFragment"
+        android:label="Add Task"
+        tools:layout="@layout/fragment_insert_task" >
+        <action
+            android:id="@+id/action_insertTaskFragment_to_tasksListFragment"
+            app:destination="@id/tasksListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateTaskFragment"
+        android:name="com.D121201054.task.Fragments.UpdateTask.UpdateTaskFragment"
+        android:label="Update Task"
+        tools:layout="@layout/fragment_update_task" >
+        <action
+            android:id="@+id/action_updateTaskFragment_to_tasksListFragment"
+            app:destination="@id/tasksListFragment" />
+        <argument
+            android:name="currentTask"
+            app:argType="com.D121201054.task.Model.TaskData" />
+    </fragment>
+</navigation>
