@@ -75,7 +75,7 @@ class InsertTaskFragment : Fragment() {
     }
 
     private fun inputCheck(title: String, description: String, category: String): Boolean {
-        return !(TextUtils.isEmpty(title) && (TextUtils.isEmpty(description) && (TextUtils.isEmpty(category))))
+        return !(TextUtils.isEmpty(title) || (TextUtils.isEmpty(description) || (TextUtils.isEmpty(category))))
 
     }
 
